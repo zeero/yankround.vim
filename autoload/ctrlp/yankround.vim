@@ -1,4 +1,10 @@
-if exists('s:save_cpo')| finish| endif
+" Load guard
+if exists('g:loaded_ctrlp_yankround')
+  \ || v:version < 700 || &cp
+  finish
+endif
+let g:loaded_ctrlp_yankround = 1
+if exists('s:save_cpo')| finish | endif
 let s:save_cpo = &cpo| set cpo&vim
 "=============================================================================
 let s:CTRLP_BUILTINS = ctrlp#getvar('g:ctrlp_builtins')
